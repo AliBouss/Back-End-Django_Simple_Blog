@@ -2,9 +2,15 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    {% block title %}
+    {% endblock %}
 </head>
 <body>
+    <section id="blog">
+        {% block content %}
+
+        {% endblock %}
+    </section>
 
 </body>
 </html>

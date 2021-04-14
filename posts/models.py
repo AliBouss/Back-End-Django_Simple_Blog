@@ -30,4 +30,10 @@ class BlogPost(models.Model):
 
         super().save(*args, **kwargs)
 
+    @property
+    def author_or_default(self):
+        if self.author:
+            return self.author.username
+        return "L'auteur inconnu"
+
 
