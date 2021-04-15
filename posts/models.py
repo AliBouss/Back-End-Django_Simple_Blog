@@ -3,6 +3,7 @@ from django.db import models
 
 # notre fonction qui va permettre de créer notre clés étrangère
 from django.template.defaultfilters import slugify
+from django.urls import reverse
 
 User = get_user_model()
 
@@ -35,5 +36,8 @@ class BlogPost(models.Model):
         if self.author:
             return self.author.username
         return "L'auteur inconnu"
+
+    def get_absolute_url(self):
+        return reverse('posts:home')
 
 
